@@ -1,0 +1,19 @@
+{
+  "name": "wso2-wso2brs",
+  "version": "2.1.0",
+  "author": "WSO2",
+  "license": "Apache-2.0",
+  "summary": "WSO2 Business Rules Server Puppet module",
+  "source": "https://github.com/wso2/puppet-brs.git",
+  "project_page": "http://wso2.com/products/business-rules-server/",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [ "12.04", "14.04" ]
+    }
+  ],
+  "tags" : ["wso2brs", "2.2.0"],
+  "dependencies": [
+    { "name": "wso2/wso2base", "version_requirement": "2.1.0" }
+  ]
+}
