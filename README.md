@@ -14,21 +14,8 @@ This repository contains the Puppet Module for installing and configuring WSO2 B
 ## How to Contribute
 Follow the steps mentioned in the [wiki](https://github.com/wso2/puppet-base/wiki) to setup a development environment and update/create new puppet modules.
 
-## Add WSO2 Base Puppet Module
-
-Run the following commands to get wso2base submodule.
-
-````
-git submodule init
-git submodule update
-````
-
 ## Packs to be Copied
-
-Copy the following files to their corresponding locations.
-
-1. WSO2 Business Rules Server distribution (2.1.0 or 2.2.0) to `<PUPPET_HOME>/modules/wso2brs/files`
-2. JDK 1.7_80 distribution to `<PUPPET_HOME>/modules/wso2base/files`
+Copy WSO2 Business Rules Server 2.2.0 distribution to `<PUPPET_HOME>/modules/wso2brs/files`
 
 ## Running WSO2 Business Rules Server in the `default` profile
 No changes to Hiera data are required to run the `default` profile.  Copy the above mentioned files to their corresponding locations and apply the Puppet Modules.
@@ -115,13 +102,6 @@ Do the below changes to relevant Business Rules Server profiles (`worker`, `mana
 ## Running WSO2 Business Rules Server with Secure Vault
 WSO2 Carbon products may contain sensitive information such as passwords in configuration files. [WSO2 Secure Vault](https://docs.wso2.com/display/Carbon444/Securing+Passwords+in+Configuration+Files) provides a solution for securing such information.
 
->For WSO2 Business Rules Server 2.1.0, which is based on WSO2 Carbon Kernel 4.2.0, `org.wso2.ciphertool-1.0.0-wso2v2.jar` in Kernel patch [patch0010](http://dist.wso2.org/maven2/org/wso2/carbon/WSO2-CARBON-PATCH-4.2.0/0010/) has to be applied before enabling the Secure Vault. The `org.wso2.ciphertool-1.0.0-wso2v2.jar` in `WSO2-CARBON-PATCH-4.2.0-0009/lib` has to be copied to `wso2brs/files/configs/lib` folder and added to the `file_list` in hiera file as below:
-
-```yaml
-wso2::file_list :
-  - lib/org.wso2.ciphertool-1.0.0-wso2v2.jar
-```
-
 Uncomment and modify the below changes in Hiera file to apply Secure Vault.
 
 1. Enable Secure Vault
@@ -146,17 +126,6 @@ Uncomment and modify the below changes in Hiera file to apply Secure Vault.
       key_store_password:
         secret_alias: Carbon.Security.KeyStore.Password
         secret_alias_value: repository/conf/carbon.xml//Server/Security/KeyStore/Password,false
-        password: wso2carbon
-    ```
-
-    For Business Rules Server `2.1.0` which is based on WSO2 Carbon Kernel 4.2.0
-
-    Ex:
-    ```yaml
-    wso2::secure_vault_configs:
-      key_store_password:
-        secret_alias: Carbon.Security.KeyStore.Password
-        secret_alias_value: carbon.xml//Server/Security/KeyStore/Password,true
         password: wso2carbon
     ```
 

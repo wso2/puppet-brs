@@ -14,6 +14,6 @@
   ],
   "tags" : ["wso2brs", "2.2.0"],
   "dependencies": [
-    { "name": "wso2/wso2base", "version_requirement": "2.1.0" }
+    { "name": "wso2/wso2base", "version_requirement": "1.0.0" }
   ]
 }
