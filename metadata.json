@@ -1,6 +1,6 @@
 {
   "name": "wso2-wso2brs",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "author": "WSO2",
   "license": "Apache-2.0",
   "summary": "WSO2 Business Rules Server Puppet module",
