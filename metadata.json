@@ -1,6 +1,6 @@
 {
   "name": "wso2-wso2brs",
-  "version": "2.2.0",
+  "version": "2.1.0",
   "author": "WSO2",
   "license": "Apache-2.0",
   "summary": "WSO2 Business Rules Server Puppet module",
@@ -12,7 +12,7 @@
       "operatingsystemrelease": [ "12.04", "14.04" ]
     }
   ],
-  "tags" : ["wso2brs", "2.2.0"],
+  "tags" : ["wso2brs", "2.1.0"],
   "dependencies": [
     { "name": "wso2/wso2base", "version_requirement": "1.0.0" }
   ]

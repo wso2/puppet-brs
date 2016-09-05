@@ -73,10 +73,10 @@
     <parameter name="ModulesDirectory">axis2modules</parameter>
 
     <parameter name="userAgent" locked="true">
-        WSO2 Business Rule Server-2.2.0
+        WSO2 Business Rule Server-2.1.0
     </parameter>
     <parameter name="server" locked="true">
-        WSO2 Business Rule Server-2.2.0
+        WSO2 Business Rule Server-2.1.0
     </parameter>
 
     <!-- ========================================================================-->
@@ -382,8 +382,8 @@
     <!-- Out Transports -->
     <!-- ================================================= -->
 
-    <!--transportSender name="tcp"
-                     class="org.apache.axis2.transport.tcp.TCPTransportSender"/-->
+    <transportSender name="tcp"
+                     class="org.apache.axis2.transport.tcp.TCPTransportSender"/>
     <transportReceiver name="local"
                        class="org.wso2.carbon.core.transports.local.CarbonLocalTransportReceiver"/>
     <transportSender name="local"
@@ -687,17 +687,6 @@
             <property name="mgtConsoleURL" value="https://${hostName}:${httpsPort}/"/>
             <property name="subDomain" value="<%= @clustering['sub_domain'] %>"/>
         </parameter>
-
-        <!--
-        Uncomment the following section to load custom Hazelcast data serializers.
-        -->
-        <!--
-        <parameter name="hazelcastSerializers">
-            <serializer typeClass="java.util.TreeSet">org.wso2.carbon.hazelcast.serializer.TreeSetSerializer
-            </serializer>
-            <serializer typeClass="java.util.Map">org.wso2.carbon.hazelcast.serializer.MapSerializer</serializer>
-        </parameter>
-        -->
 
         <!--
            The list of static or well-known members. These entries will only be valid if the
