@@ -36,7 +36,7 @@ class wso2brs::params {
     $post_configure_resources           = undef
     $post_start_resources               = undef
     $is_datasource                      = 'wso2_carbon_db'
-    $platform_version                   = '4.4.0'
+    $platform_version                   = '4.2.0'
     $patch_list                         = []
   }
 
